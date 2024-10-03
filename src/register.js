@@ -1,17 +1,21 @@
 import {auth, db} from './firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore'; // Import Firestore functions
+import { getFirestore, doc, setDoc } from "firebase/firestore"; 
 
-const createUserCart = (userID) => {
-  const cartRef = db.collection('cart').doc(userID);
+const createUserCart = async (userID) => {
+  const cartRef = doc(db,'cart', userID);
 
-  cartRef.set({
+  try{
+  await setDoc(cartRef, {
     totalPrice: 0,
-    products: {}
-  })
-  .then(() => {
-    console.log("Cart created successfuly for user:",userID);
-  })
+    products:{}
+  });
+  console.log("Created cart successfully for user:", userID);
+} catch (error){
+  console.error("Error creating cart:",error);
+}
+
+
 }
 
 const newEntry = document.getElementById('submit');
@@ -24,11 +28,9 @@ createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user){
-      createUserCart(user.uid);
-    }
-  });
+    console.log('successfully created user:',user.uid);
+    createUserCart(user.uid);
+
     windows.location.href = "index.html";
   })
   .catch((error) => {
@@ -37,5 +39,3 @@ createUserWithEmailAndPassword(auth, email, password)
     console.error('Error registering:', errorMessage);
   });
 })
-
-// export {user}

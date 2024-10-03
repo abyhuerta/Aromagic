@@ -7,7 +7,6 @@ newEntry.addEventListener('click',function(event){
 const email = document.getElementById('user-email').value;
 const password = document.getElementById('user-password').value;
 
-const auth = getAuth();
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -19,5 +18,3 @@ signInWithEmailAndPassword(auth, email, password)
     const errorMessage = error.message;
   });
 })
-
-export {user}
