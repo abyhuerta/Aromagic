@@ -13,7 +13,7 @@ createUserWithEmailAndPassword(auth, email, password)
     // Signed up 
     const user = userCredential.user;
     console.log('User has registered successfully');
-    windows.location.href = "index.html"
+    windows.location.href = "index.html";
   })
   .catch((error) => {
     const errorCode = error.code;
