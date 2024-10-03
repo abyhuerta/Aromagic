@@ -20,3 +20,4 @@ signInWithEmailAndPassword(auth, email, password)
   });
 })
 
+export {user}
