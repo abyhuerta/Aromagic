@@ -1,6 +1,8 @@
 ## get started
 
 **_Set Up_**
+1. download node.js
+   ```https://nodejs.org/en```
 1. go to the root directory and run
  ``` npm install firebase ```
 2. then run
