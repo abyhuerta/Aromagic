@@ -1,0 +1,13 @@
+/* include nav bar and footers, and any shared styling accross all pages. */
+
+h1{
+
+}
+
+.btn{
+    background-color: pink;
+}
+
+a{
+    text-decoration: none;
+}
