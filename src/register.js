@@ -31,7 +31,7 @@ createUserWithEmailAndPassword(auth, email, password)
     console.log('successfully created user:',user.uid);
     createUserCart(user.uid);
 
-    windows.location.href = "index.html";
+    window.location.href = "index.html";
   })
   .catch((error) => {
     const errorCode = error.code;
