@@ -11,6 +11,15 @@ const products = [
 },
 {
     id:2,
+    name: "Product Example 2",
+    price: 99.99,
+    images:[],
+    stock:1000,
+    description: "This candle did not take $3 to make",
+    sizes: [],
+    category: "fall"
 }
 
 ]
+
+export{products}
