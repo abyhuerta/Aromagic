@@ -1,4 +1,4 @@
-import Products from './catalog.js'
+import products from './catalog.js'
 //--------------------------code for shop.html-------------------------
 
 //TODO: load products by category,size,price,all
@@ -13,45 +13,83 @@ import Products from './catalog.js'
   </div>
 </div> */
 function loadAll(){
-    const shopsection = document.getElementById('shopping-section');
-            for( currproduct in Products){
+    const cardGroup = document.getElementById('card-group');
+            for(let currproduct of products){
+                  let coldiv = document.createElement('div');
+                  coldiv.classList.add('col');
                     let carddiv = document.createElement('div');
                     carddiv.classList.add('card');
     
+                    coldiv.appendChild(carddiv);
+
+                    let imga = document.createElement('a');
+                    imga.href = './product.html';
+
                     let cardimg = document.createElement('img');
-                    cardimg.src = currproduct.images[0];
+                    if (currproduct.images && currproduct.images.length > 0) {
+                      cardimg.src = currproduct.images[0];
+                  } else {
+                      cardimg.src = './src/assets/imgs/blank_candle.jpg'; // A fallback image if the array is empty
+                  }
                     cardimg.classList.add('card-img-top');
+                    cardimg.setAttribute('data-product-id', currproduct.id);
+
+                    cardimg.addEventListener('click', function() {
+                      exportProductNum(currproduct.id);  // Pass the product ID directly
+                  });
     
-                    carddiv.appendChild(cardimg);
+                    imga.appendChild(cardimg);
+                    carddiv.appendChild(imga);
     
-                    let cardbody = docuemnt.createElement('div');
+                    let cardbody = document.createElement('div');
                     cardbody.classList.add('card-body');
+
+                    let namea = document.createElement('a');
+                    namea.href = './product.html';
     
                     let cardtitle = document.createElement('h5');
-                    cardtitle.textContent = currproduct.name;
+                    cardtitle.innerText = currproduct.name;
     
-                    cardbody.appendChild(cardtitle);
+                    namea.appendChild(cardtitle);
+                    cardbody.appendChild(namea);
     
-                    let cardtext = docuemnt.createElement('p');
-                    cardtext.textContent = currproduct.price;
+                    let cardtext = document.createElement('p');
+                    cardtext.innerText = currproduct.price;
     
                     cardbody.appendChild(cardtext);
     
                     let buybutton = document.createElement('a');
+                    buybutton.innerText = "Add to cart";
                     buybutton.classList.add('btn');
     
                     cardbody.appendChild(buybutton);
+
+
+                    carddiv.appendChild(cardbody);
+                    cardGroup.appendChild(coldiv);
             }
-    }
-    
-    function filterByType(){
-    
-    }
-    
-    function filterByPrice(){
-    
-    }
-    
-    function filterBySize(){
             
     }
+    
+    function filterByType( type){
+    
+    }
+    
+    function filterByPrice(min,max){
+    
+    }
+    
+    function filterBySize(size){
+            
+    }
+
+    function exportProductNum(productID){
+      //send product id to product.html
+        console.log(productID);
+    }
+
+    
+
+    loadAll();
+
+    export{exportProductNum};
