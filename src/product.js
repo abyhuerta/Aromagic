@@ -1,38 +1,42 @@
 import Products from "./catalog.js"
+import exportProductNum from "./shop.js"
 
-function getProduct(prodID)
+function getProduct(exportProductNum)
 {
-   
-   for(i = 0; i < Products.length(); i++)
- {
-   if(prodID == Products[i].id)
-   {
-   let currentprod = Products[i];
-   currentprod.title
+let currProd = 0;
+for(i = 0; i < Products.length(); i++)
+{
+  {
+    if(exportProductNum == Products[i].id)
+      {
+        currProd = i;
+      }
+    }
+  }
    let destination = document.getElementById('product-home');
 
    let destImg = document.getElementById('cardimg');
 
    let destDesc =   document.getElementById('prdDesc');
-   destDesc.textContent = Products[i].description;
+   destDesc.innerText = Products[currProd].description;
 
    let destTitle = document.getElementById('prdTitle');
-   destTitle.textContent = Products[i].name;
+   destTitle.innerText = Products[currProd].name;
 
    let destPrice = document.getElementById('prdPrice');
-   destPrice.textContent = Products[i].price;
+   destPrice.innerText = Products[currProd].price;
 
    let destStock = document.getElementById('prdStock');
-   destStock.textContent = Products[i].stock;
+   destStock.innerText = Products[currProd].stock;
 
-   for(j = 0; j < Product[i].images.length; j++)
-   {
-   destImg.src = Products[i].images[j];
-   }
-
-   }
+   //for(j = 0; j < Product[currProd].images.length; j++)
+   //{
+   //destImg.src = Products[currProd].images[j];
+   //}
   }
-}
+
+
+getProduct(exportProductNum);
 //for jordan!
 // for(int i = 0; i< products.len){
 //     let currentprod = products[i];
