@@ -1,4 +1,6 @@
 import products from './catalog.js'
+import { db } from './firebaseConfig.js';
+import { collection,daddDoc } from 'firebase/firestore';
 //--------------------------code for shop.html-------------------------
 
 //TODO: load products by category,size,price,all
@@ -61,6 +63,9 @@ function loadAll(){
                     let buybutton = document.createElement('a');
                     buybutton.innerText = "Add to cart";
                     buybutton.classList.add('btn');
+                    buybutton.addEventListener('click', function(){
+                      addItemToCart(currproduct.id);
+                    })
     
                     cardbody.appendChild(buybutton);
 
@@ -85,11 +90,16 @@ function loadAll(){
 
     function exportProductNum(productID){
       //send product id to product.html
-        console.log(productID);
+      console.log(productID)
+
+    }
+
+    function addItemToCart(productID){
+      
     }
 
     
 
     loadAll();
 
-    export{exportProductNum};
+   export default{exportProductNum,addItemToCart};
