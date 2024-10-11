@@ -37,7 +37,8 @@ function loadAll(){
                     cardimg.setAttribute('data-product-id', currproduct.id);
 
                     cardimg.addEventListener('click', function() {
-                      exportProductNum(currproduct.id);  // Pass the product ID directly
+                      const productId = cardimg.getAttribute('data-product-id');  // Get the value of data-product-id
+                      exportProductNum(productId);  // Pass the product ID directly
                   });
     
                     imga.appendChild(cardimg);
