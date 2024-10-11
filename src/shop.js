@@ -1,6 +1,6 @@
 import products from './catalog.js'
 import { db } from './firebaseConfig.js';
-import { collection,daddDoc } from 'firebase/firestore';
+import { collection,addDoc } from 'firebase/firestore';
 //--------------------------code for shop.html-------------------------
 
 //TODO: load products by category,size,price,all
