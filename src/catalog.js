@@ -187,3 +187,5 @@ const products = [
         description: "A cozy hug for the seasons, this candle combines warm spicy notes of ginger, cinnamon, and nutmeg with sweet vanilla and molasses for a nostalgic holiday experience."
     },
 ]
+
+export default products;

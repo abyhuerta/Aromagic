@@ -1,5 +1,42 @@
 import Products from "./catalog.js"
+import exportProductNum from "./shop.js"
 
+function getProduct(exportProductNum)
+{
+let currProd = 0;
+for(i = 0; i < Products.length(); i++)
+{
+  {
+    if(exportProductNum == Products[i].id)
+      {
+        currProd = i;
+      }
+    }
+  }
+   let destination = document.getElementById('product-home');
+
+   let destImg = document.getElementById('cardimg');
+
+   let destDesc =   document.getElementById('prdDesc');
+   destDesc.innerText = Products[currProd].description;
+
+   let destTitle = document.getElementById('prdTitle');
+   destTitle.innerText = Products[currProd].name;
+
+   let destPrice = document.getElementById('prdPrice');
+   destPrice.innerText = Products[currProd].price;
+
+   let destStock = document.getElementById('prdStock');
+   destStock.innerText = Products[currProd].stock;
+
+   //for(j = 0; j < Product[currProd].images.length; j++)
+   //{
+   //destImg.src = Products[currProd].images[j];
+   //}
+  }
+
+
+getProduct(exportProductNum);
 //for jordan!
 // for(int i = 0; i< products.len){
 //     let currentprod = products[i];
@@ -25,40 +62,3 @@ import Products from "./catalog.js"
 //     }
 // }
 
-
-//aby
-
-//TODO: load products by category,size,price,all
-//event listener for card click 
-
-/* <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> */
-function loadAll(){
-const shopsection = document.getElementById('shopping-section');
-        for( currproduct in Products){
-                let carddiv = document.createElement('div');
-                carddiv.classList.add('card');
-
-                let cardimg = document.createElement('img');
-                cardimg.src = currproduct.images[0];
-                cardimg.classList.add('card-img-top');
-
-                let cardbody = docuemnt.createElement('div');
-                cardbody.classList.add('card-body');
-
-                let cardtitle = document.createElement('h5');
-                cardtitle.textContent = currproduct.name;
-
-                let cardtext = docuemnt.createElement('p');
-                cardtext.textContent = currproduct.price;
-
-                let buybutton = document.createElement('a');
-                buybutton.classList.add('btn');
-        }
-}
