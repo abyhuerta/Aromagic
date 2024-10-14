@@ -1,9 +1,37 @@
 /* .card-img-top{
     width: 20em;
 } */
-body{
-    margin:auto;
+:root{
+    --primary-color: #F9F5E7;
+    --secondary-color: #795757;
+    --tertiary-color: #664343;
+    --quadra-color: #3B3030;
+
+    --main-font:var(--main-font);
+    --heading-font: ;
+    --text-font: ;
 }
+
+
+body{
+
+    margin:0;
+    background-color: #F9F5E7;
+
+}
+
+.navbar{
+    background-color: var(--quadra-color);
+}
+
+.navbar a{
+    color:var(--primary-color);
+}
+
+.navbar-brand{
+    color: var(--primary-color);
+}
+
 .card{
     /* width: 25em; */
 }
