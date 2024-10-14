@@ -98,7 +98,7 @@ const products = [
         name: "Forrest Pine",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ["./src/assets/imgs/11.c1.jpg", "./src/assets/imgs/11.c2.jpg", "./src/assets/imgs/11.c3.jpg", "./src/assets/imgs/11.c4.jpg"],
         stock: 80,
         description: "Breathe in the crisp, invigorating aroma of a pine forest, layered with earthy undertones and hints of cedarwood. Perfect for bringing the fresh scent of nature indoors year-round."
     },
@@ -107,7 +107,7 @@ const products = [
         name: "Cafe en Paris",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ["./src/assets/imgs/12.c1.jpg", "./src/assets/imgs/12.c2.jpg", "./src/assets/imgs/12.c3.jpg", "./src/assets/imgs/12.c4.jpg"],
         stock: 80,
         description: "Sip on the warm, inviting scent of a Parisian café, with rich coffee notes of buttery croissants, and a hint of chocolate, perfect for a cozy moment."
     },
@@ -117,7 +117,7 @@ const products = [
         name: "Autumn Breeze",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/13.c1.jpg", "./src/assets/imgs/13.c2.jpg", "./src/assets/imgs/13.c3.jpg", "./src/assets/imgs/13.c4.jpg"],
         stock: 50,
         description: " Embrace the essence of fall with this blend of cool air, earthy musk, and hints of spiced apple. It evokes the beauty and warmth of autumn landscapes."
     },
@@ -126,7 +126,7 @@ const products = [
         name: "Pumknin Spice Latte",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/14.c1.jpg", "./src/assets/imgs/14.c2.jpg", "./src/assets/imgs/14.c3.jpg", "./src/assets/imgs/14.c4.jpg"],
         stock: 50,
         description: "Better than drinking the coffee. Delight in the cozy aroma of spiced pumpkin and rich coffee, layered with sweet cream and cinnamon. It brings the warmth of your favorite café drink right into your home."
     },
@@ -135,7 +135,7 @@ const products = [
         name: "Pumpkin Patch",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/15.c1.jpg", "./src/assets/imgs/15.c2.jpg", "./src/assets/imgs/15.c3.jpg", "./src/assets/imgs/15.c4.jpg"],
         stock: 50,
         description: "Nothing's better than having the smell of pumpkins in the air. Capture the essence of a pumpkin patch with this warm, earthy scent, perfect for celebrating the harvest season."
         
@@ -145,7 +145,7 @@ const products = [
          name: "Haunted",
          price: 24.99,
          oz: [18, 24],
-         images: [],
+        images: ["./src/assets/imgs/16.c1.jpg", "./src/assets/imgs/16.c2.jpg", "./src/assets/imgs/16.c3.jpg", "./src/assets/imgs/16.c4.jpg"],
          stock: 50,
         description: "There's no better way to get into the spooky season. Get into the spooky spirit with this mysterious blend, combining notes of autumn spices, smoky undertones, and a hint of dark berries for a hauntingly delightful experience."
     },
@@ -155,7 +155,7 @@ const products = [
         name: "Sugar Cookies",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/17.c1.jpg", "./src/assets/imgs/17.c2.jpg", "./src/assets/imgs/17.c3.jpg", "./src/assets/imgs/17.c4.jpg"],
         stock: 75,
         description: "Experience the sweet, buttery aroma of freshly baked sugar cookies, infused with vanilla and a sprinkle of holiday cheer."
     },
@@ -164,7 +164,7 @@ const products = [
         name: "The Perfect Present",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/18.c1.jpg", "./src/assets/imgs/18.c2.jpg", "./src/assets/imgs/18.c3.jpg"],
         stock: 75,
         description: "Unwrap the joy of the season with this delightful blend of festive spices, sweet treats, and a hint of pine. It’s perfect for holiday gatherings and creating cherished memories."
     },
@@ -173,7 +173,7 @@ const products = [
         name: "Melted Snowman",
         price: 24.99,
         oz: [18, 24],
-        images: [],
+        images: ["./src/assets/imgs/19.c1.jpg", "./src/assets/imgs/19.c2.jpg", "./src/assets/imgs/19.c3.jpg", "./src/assets/imgs/19.c4.jpg"],
         stock: 75,
         description: "Have you ever smelled melting snow?! Enjoy the whimsical scent of melting snow, blending fresh winter air with hints of vanilla and marshmallow for a sweet, cozy vibe."
     },
@@ -182,7 +182,7 @@ const products = [
         name: "GingerBread",
         price: 24.99,
         oz: [18, 24],
-        images: ["./src/assets/imgs/c20.jpg",],
+        images: ["./src/assets/imgs/20.c1.jpg", "./src/assets/imgs/20.c2.jpg", "./src/assets/imgs/20.c3.jpg", "./src/assets/imgs/20.c4.jpg"],
         stock: 75,
         description: "A cozy hug for the seasons, this candle combines warm spicy notes of ginger, cinnamon, and nutmeg with sweet vanilla and molasses for a nostalgic holiday experience."
     },
