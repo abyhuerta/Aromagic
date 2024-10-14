@@ -14,6 +14,7 @@ import { collection,addDoc } from 'firebase/firestore';
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div> */
+let selectedProductNum = 0;
 function loadAll(){
     const cardGroup = document.getElementById('card-group');
             for(let currproduct of products){
@@ -25,7 +26,7 @@ function loadAll(){
                     coldiv.appendChild(carddiv);
 
                     let imga = document.createElement('a');
-                    imga.href = './product.html';
+                    // imga.href = './product.html';
 
                     let cardimg = document.createElement('img');
                     if (currproduct.images && currproduct.images.length > 0) {
@@ -38,7 +39,8 @@ function loadAll(){
 
                     cardimg.addEventListener('click', function() {
                       const productId = cardimg.getAttribute('data-product-id');  // Get the value of data-product-id
-                      exportProductNum(productId);  // Pass the product ID directly
+                        // Redirect to product.html with the product ID in the URL
+                      window.location.href = `./product.html?id=${productId}`;
                   });
     
                     imga.appendChild(cardimg);
@@ -48,16 +50,23 @@ function loadAll(){
                     cardbody.classList.add('card-body');
 
                     let namea = document.createElement('a');
-                    namea.href = './product.html';
-    
+
                     let cardtitle = document.createElement('h5');
                     cardtitle.innerText = currproduct.name;
-    
+                    cardtitle.setAttribute('data-product-id', currproduct.id);
+                    // namea.href = './product.html';
+                    namea.addEventListener('click', function() {
+                      const productId = cardtitle.getAttribute('data-product-id');  // Get the value of data-product-id
+
+                        // Redirect to product.html with the product ID in the URL
+                      window.location.href = `./product.html?id=${productId}`;
+                  });
+        
                     namea.appendChild(cardtitle);
                     cardbody.appendChild(namea);
     
                     let cardtext = document.createElement('p');
-                    cardtext.innerText = currproduct.price;
+                    cardtext.innerText = `$${currproduct.price}`;
     
                     cardbody.appendChild(cardtext);
     
@@ -66,13 +75,21 @@ function loadAll(){
                     buybutton.classList.add('btn');
                     buybutton.addEventListener('click', function(){
                       addItemToCart(currproduct.id);
-                    })
+                    });
     
                     cardbody.appendChild(buybutton);
 
 
                     carddiv.appendChild(cardbody);
-                    cardGroup.appendChild(coldiv);
+                    document.addEventListener('DOMContentLoaded', function() {
+                      // Your code to get cardGroup and append coldiv goes here
+                      var cardGroup = document.getElementById('cardGroup'); // Replace with your selector
+                      if (cardGroup) {
+                        cardGroup.appendChild(coldiv);
+                      } else {
+                        console.error("cardGroup element not found.");
+                      }
+                    });
             }
             
     }
@@ -89,9 +106,9 @@ function loadAll(){
             
     }
 
-    function exportProductNum(productID){
+    function exportProductNum(){
       //send product id to product.html
-      console.log(productID)
+      console.log(selectedProductNum)
 
     }
 
@@ -101,6 +118,23 @@ function loadAll(){
 
     
 
-    loadAll();
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAll();
+  });
+// //for product .js
+// function getProductIdFromUrl() {
+//   const queryString = window.location.search;
+//   const urlParams = new URLSearchParams(queryString);
+//   const productId = urlParams.get('id'); // Get the product ID from the URL
+
+//   return productId;
+// }
+
+// // Use this product ID to load the specific product details
+// const productId = getProductIdFromUrl();
+// // Now, you can fetch the product details using the productId
+// console.log(productId);
+
+
 
    export default{exportProductNum,addItemToCart};
