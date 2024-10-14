@@ -1,6 +1,13 @@
 import Products from "./catalog.js"
 // import exportProductNum from "./shop.js"
-
+function getProductIdFromUrl() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const productId = urlParams.get('id'); // Get the product ID from the URL
+  
+   return productId;
+  }
+console.log(getProductIdFromUrl());
 function getProduct()
 {
 let currProd = 0;
