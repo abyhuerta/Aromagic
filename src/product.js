@@ -1,18 +1,18 @@
 import Products from "./catalog.js"
-import exportProductNum from "./shop.js"
+// import exportProductNum from "./shop.js"
 
-function getProduct(exportProductNum)
+function getProduct()
 {
 let currProd = 0;
-for(i = 0; i < Products.length(); i++)
-{
-  {
-    if(exportProductNum == Products[i].id)
-      {
-        currProd = i;
-      }
-    }
-  }
+//for(i = 0; i < Products.length(); i++)
+//{
+  
+    //if(exportProductNum == Products[i].id)
+      //{
+        //currProd = i;
+      //}
+    
+  //}
    let destination = document.getElementById('product-home');
 
    let destImg = document.getElementById('cardimg');
@@ -33,10 +33,16 @@ for(i = 0; i < Products.length(); i++)
    //{
    //destImg.src = Products[currProd].images[j];
    //}
+   if (currProd.images && currProd.images.length > 0) 
+    {
+    destImg.src = currProd.images[0];
+} else {
+    destImg.src = './src/assets/imgs/blank_candle.jpg'; // A fallback image if the array is empty
+}
   }
 
 
-getProduct(exportProductNum);
+getProduct();
 //for jordan!
 // for(int i = 0; i< products.len){
 //     let currentprod = products[i];
