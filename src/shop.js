@@ -75,21 +75,13 @@ function loadAll(){
                     buybutton.classList.add('btn');
                     buybutton.addEventListener('click', function(){
                       addItemToCart(currproduct.id);
-                    });
+                    })
     
                     cardbody.appendChild(buybutton);
 
 
                     carddiv.appendChild(cardbody);
-                    document.addEventListener('DOMContentLoaded', function() {
-                      // Your code to get cardGroup and append coldiv goes here
-                      var cardGroup = document.getElementById('cardGroup'); // Replace with your selector
-                      if (cardGroup) {
-                        cardGroup.appendChild(coldiv);
-                      } else {
-                        console.error("cardGroup element not found.");
-                      }
-                    });
+                    cardGroup.appendChild(coldiv);
             }
             
     }
