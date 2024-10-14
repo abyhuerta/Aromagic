@@ -6,7 +6,7 @@ const products = [
         name: "The Magic",
         price: 19.99,
         oz: [10,18,24],
-        images: [],
+        images: ['./src/assets/imgs/c1-1.jpg','./src/assets/imgs/c1-2.jpg','./src/assets/imgs/c1-3.jpg','./src/assets/imgs/c1-4.jpg'],
         stock: 100,
         description: "Experience the enchanting aroma of our original blend. It features a harmonious mix of floral and earthy notes, designed to uplift your spirit and create an inviting ambiance."
     },
@@ -15,7 +15,7 @@ const products = [
         name: "Rose",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c2-1.jpg','./src/assets/imgs/c2-2.jpg','./src/assets/imgs/c2-3.jpg','./src/assets/imgs/c2-4.jpg'],
         stock: 80,
         description: "Stop and smell the roses. Indulge in the delicate fragrance of blooming roses layered with soft hints of green stems and a whisper of sweetness, a romantic scent that transforms your space into a garden of tranquility and beauty"
 
@@ -25,7 +25,7 @@ const products = [
         name: "Vinilla Bean", 
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c3-1.jpg','./src/assets/imgs/c3-2.jpg','./src/assets/imgs/c3-3.jpg','./src/assets/imgs/c3-4.jpg'],
         stock: 80,
         description: "Dive into the rich, creamy essence of vanilla bean infused with warm caramel undertones and a hint of spice, filling your home with warmth and comfort reminiscent of fresh-baked treats."
     },
@@ -34,16 +34,16 @@ const products = [
         name: "Maple Syrup",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c4-1.jpg','./src/assets/imgs/c4-2.jpg','./src/assets/imgs/c4-3.jpg','./src/assets/imgs/c4-4.jpg'],
         stock: 80,
-        description: "Does not come with pankase, but smells like grandma's cooking. Embrace the nostalgic scent of warm maple syrup with caramelized sugar and buttery undertones. Evoking memories of cozy breakfasts at grandma's house, even without the pancakes."
+        description: "Does not come with pancakes, but smells like grandma's cooking. Embrace the nostalgic scent of warm maple syrup with caramelized sugar and buttery undertones. Evoking memories of cozy breakfasts at grandma's house, even without the pancakes."
     },
     {
         id: 5,
         name: "Rain Rain Rain",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c5-1.jpg','./src/assets/imgs/c5-2.jpg','./src/assets/imgs/c5-3.jpg','./src/assets/imgs/c5-4.jpg'],
         stock: 80,
         description: "Capture the refreshing scent of a gentle rain shower, blending fresh earthiness with hints of clean linen. A clean and crisp aroma that brings the tranquility of nature indoors."
     
@@ -62,7 +62,7 @@ const products = [
         name: "Beach Day",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c7-1.jpg','./src/assets/imgs/c7-2.jpg','./src/assets/imgs/c7-3.jpg','./src/assets/imgs/c7-4.jpg'],
         stock: 80,
         description: "Transport yourself to a sun-soaked beach with this fresh, salty aroma, mingled with notes of coconut, evoking the carefree spirit of summer and the joy of ocean breezes."
     },
@@ -71,7 +71,7 @@ const products = [
         name: "Ocean Water",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c8-1.jpg','./src/assets/imgs/c8-2.jpg','./src/assets/imgs/c8-3.jpg','./src/assets/imgs/c8-4.jpg'],
         stock: 80,
         description: "Feel the refreshing waves wash over you with this invigorating scent, blending cool sea air, crisp citrus, and a hint of floral notes. Reminiscent of seaside strolls and sun-drenched days by the shore."
     },
@@ -80,7 +80,7 @@ const products = [
         name: "Cherry Blossom",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c9-1.jpg','./src/assets/imgs/c9-2.jpg','./src/assets/imgs/c9-3.jpg','./src/assets/imgs/c9-4.jpg'],
         stock: 80,
         description: "Revel in the delicate fragrance of cherry blossoms in full bloom, with a soft, sweet notes and a subtle hint of green. A floral scent that brings springtime joy into your home."
     },
@@ -89,9 +89,9 @@ const products = [
         name: "Apple Pie",
         price: 19.99,
         oz: [10, 18, 24],
-        images: [],
+        images: ['./src/assets/imgs/c10-1.jpg','./src/assets/imgs/c10-2.jpg','./src/assets/imgs/c109-3.jpg','./src/assets/imgs/c10-4.jpg'],
         stock: 80,
-        description: "The great American Apple Pie. Enjoy the heartwarming scent of freshly baked apple pie,f illed with sweet, tart apples and a dash of cinnamon. It creates a comforting atmosphere."
+        description: "The great American Apple Pie. Enjoy the heartwarming scent of freshly baked apple pie,filled with sweet, tart apples and a dash of cinnamon. It creates a comforting atmosphere."
     },
     {
         id: 11,
@@ -109,7 +109,7 @@ const products = [
         oz: [10, 18, 24],
         images: ["./src/assets/imgs/12.c1.jpg", "./src/assets/imgs/12.c2.jpg", "./src/assets/imgs/12.c3.jpg", "./src/assets/imgs/12.c4.jpg"],
         stock: 80,
-        description: "Sip on the warm, inviting scent of a Parisian café, with rich coffee notes of buttery croissants, and a hint of chocolate, perfect for a cozy moment."
+        description: "Sip on the warm, inviting scent of a Parisian cafï¿½, with rich coffee notes of buttery croissants, and a hint of chocolate, perfect for a cozy moment."
     },
     //--------------Seasonal Scents (Autumn-----------)
     {
@@ -128,7 +128,7 @@ const products = [
         oz: [18, 24],
         images: ["./src/assets/imgs/14.c1.jpg", "./src/assets/imgs/14.c2.jpg", "./src/assets/imgs/14.c3.jpg", "./src/assets/imgs/14.c4.jpg"],
         stock: 50,
-        description: "Better than drinking the coffee. Delight in the cozy aroma of spiced pumpkin and rich coffee, layered with sweet cream and cinnamon. It brings the warmth of your favorite café drink right into your home."
+        description: "Better than drinking the coffee. Delight in the cozy aroma of spiced pumpkin and rich coffee, layered with sweet cream and cinnamon. It brings the warmth of your favorite cafï¿½ drink right into your home."
     },
     {
         id: 15,
@@ -166,7 +166,7 @@ const products = [
         oz: [18, 24],
         images: ["./src/assets/imgs/18.c1.jpg", "./src/assets/imgs/18.c2.jpg", "./src/assets/imgs/18.c3.jpg"],
         stock: 75,
-        description: "Unwrap the joy of the season with this delightful blend of festive spices, sweet treats, and a hint of pine. It’s perfect for holiday gatherings and creating cherished memories."
+        description: "Unwrap the joy of the season with this delightful blend of festive spices, sweet treats, and a hint of pine. Itï¿½s perfect for holiday gatherings and creating cherished memories."
     },
     {
         id: 19,
