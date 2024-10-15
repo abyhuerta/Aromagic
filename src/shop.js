@@ -1,6 +1,6 @@
 import products from './catalog.js'
-import { db } from './firebaseConfig.js';
-import { collection,addDoc } from 'firebase/firestore';
+import { addItemToCart } from './cart.js';
+import { getCurrentUserId } from './userState.js';
 //--------------------------code for shop.html-------------------------
 
 //TODO: load products by category,size,price,all
@@ -98,14 +98,9 @@ function loadAll(){
             
     }
 
-    function exportProductNum(){
-      //send product id to product.html
-      console.log(selectedProductNum)
 
-    }
-
-    function addItemToCart(productID){
-      
+    function addItemToCartHelper(productID){
+      addItemToCart(productID);
     }
 
     
@@ -113,20 +108,5 @@ function loadAll(){
     document.addEventListener('DOMContentLoaded', function() {
       loadAll();
   });
-// //for product .js
-// function getProductIdFromUrl() {
-//   const queryString = window.location.search;
-//   const urlParams = new URLSearchParams(queryString);
-//   const productId = urlParams.get('id'); // Get the product ID from the URL
 
-//   return productId;
-// }
-
-// // Use this product ID to load the specific product details
-// const productId = getProductIdFromUrl();
-// // Now, you can fetch the product details using the productId
-// console.log(productId);
-
-
-
-   export default{exportProductNum,addItemToCart};
+   export default{addItemToCart};

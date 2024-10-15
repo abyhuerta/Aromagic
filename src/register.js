@@ -8,7 +8,7 @@ const createUserCart = async (userID) => {
   try{
   await setDoc(cartRef, {
     totalPrice: 0,
-    products:{}
+    products:[]
   });
   console.log("Created cart successfully for user:", userID);
 } catch (error){
