@@ -75,7 +75,7 @@ export const addItemToCart = async (productID, oz, qty) => {
 
   // Calculate total price based on updated cart
   const totalPrice = existingProducts[productID].reduce((total, item) => {
-    const price = products.find(product => product.id === productID).price; // Assuming products contains price info
+    const price = products.find(product => product.id === productID).price;
     return total + (price * item.oz * item.qty);
   }, 0);
 
@@ -134,7 +134,7 @@ export const removeItemFromCart = async (productID, oz, qty) => {
     // Update the cart with the modified products and new total price
     await updateDoc(cartRef, {
       products: existingProducts,
-      total: increment(-totalPrice), // Assuming total is being decremented
+      total: increment(-totalPrice),
     });
   } else {
     console.error("Specified oz not found in cart.");
