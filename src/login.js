@@ -5,7 +5,7 @@ import { setCurrentUser } from './userState'; // Import user state functions
 const newEntry = document.getElementById('submit');
 
 // Set persistence for auth
-setPersistence(auth, browserSessionPersistence)
+setPersistence(auth, browserLocalPersistence)
   .then(() => {
     newEntry.addEventListener('click', function(event) {
       const email = document.getElementById('user-email').value;
@@ -16,7 +16,6 @@ setPersistence(auth, browserSessionPersistence)
           // Signed in 
           const user = userCredential.user;
           setCurrentUser(user); // Update the user state with the user object
-          window.location.href = "index.html";
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -36,6 +35,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in
     setCurrentUser(user);
     console.log("User is signed in:", user);
+    window.location.href = "index.html";
   
   } else {
     // User is signed out

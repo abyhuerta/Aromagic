@@ -4,7 +4,7 @@ const products = [
         //----------All Year Round Scents-----------
         id: 1,
         name: "The Magic",
-        price: 19.99,
+        price: 1.39,
         oz: [10,18,24],
         images: ['./src/assets/imgs/c1-1.jpg','./src/assets/imgs/c1-2.jpg','./src/assets/imgs/c1-3.jpg','./src/assets/imgs/c1-4.jpg'],
         stock: 100,
@@ -13,7 +13,7 @@ const products = [
     {
         id: 2,
         name: "Rose",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c2-1.jpg','./src/assets/imgs/c2-2.jpg','./src/assets/imgs/c2-3.jpg','./src/assets/imgs/c2-4.jpg'],
         stock: 80,
@@ -23,7 +23,7 @@ const products = [
     {
         id: 3,
         name: "Vinilla Bean", 
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c3-1.jpg','./src/assets/imgs/c3-2.jpg','./src/assets/imgs/c3-3.jpg','./src/assets/imgs/c3-4.jpg'],
         stock: 80,
@@ -32,7 +32,7 @@ const products = [
     {
         id: 4,
         name: "Maple Syrup",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c4-1.jpg','./src/assets/imgs/c4-2.jpg','./src/assets/imgs/c4-3.jpg','./src/assets/imgs/c4-4.jpg'],
         stock: 80,
@@ -41,7 +41,7 @@ const products = [
     {
         id: 5,
         name: "Rain Rain Rain",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c5-1.jpg','./src/assets/imgs/c5-2.jpg','./src/assets/imgs/c5-3.jpg','./src/assets/imgs/c5-4.jpg'],
         stock: 80,
@@ -51,7 +51,7 @@ const products = [
     {
         id: 6,
         name: "Tu Casa",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: [],
         stock: 80,
@@ -60,7 +60,7 @@ const products = [
     {
         id: 7,
         name: "Beach Day",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c7-1.jpg','./src/assets/imgs/c7-2.jpg','./src/assets/imgs/c7-3.jpg','./src/assets/imgs/c7-4.jpg'],
         stock: 80,
@@ -69,7 +69,7 @@ const products = [
     {
         id: 8,
         name: "Ocean Water",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c8-1.jpg','./src/assets/imgs/c8-2.jpg','./src/assets/imgs/c8-3.jpg','./src/assets/imgs/c8-4.jpg'],
         stock: 80,
@@ -78,7 +78,7 @@ const products = [
     {
         id: 9,
         name: "Cherry Blossom",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c9-1.jpg','./src/assets/imgs/c9-2.jpg','./src/assets/imgs/c9-3.jpg','./src/assets/imgs/c9-4.jpg'],
         stock: 80,
@@ -87,7 +87,7 @@ const products = [
     {
         id: 10,
         name: "Apple Pie",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ['./src/assets/imgs/c10-1.jpg','./src/assets/imgs/c10-2.jpg','./src/assets/imgs/c109-3.jpg','./src/assets/imgs/c10-4.jpg'],
         stock: 80,
@@ -96,7 +96,7 @@ const products = [
     {
         id: 11,
         name: "Forrest Pine",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ["./src/assets/imgs/11.c1.jpg", "./src/assets/imgs/11.c2.jpg", "./src/assets/imgs/11.c3.jpg", "./src/assets/imgs/11.c4.jpg"],
         stock: 80,
@@ -105,7 +105,7 @@ const products = [
     {
         id: 12,
         name: "Cafe en Paris",
-        price: 19.99,
+        price: 1.39,
         oz: [10, 18, 24],
         images: ["./src/assets/imgs/12.c1.jpg", "./src/assets/imgs/12.c2.jpg", "./src/assets/imgs/12.c3.jpg", "./src/assets/imgs/12.c4.jpg"],
         stock: 80,
@@ -115,7 +115,7 @@ const products = [
     {
         id: 13,
         name: "Autumn Breeze",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/13.c1.jpg", "./src/assets/imgs/13.c2.jpg", "./src/assets/imgs/13.c3.jpg", "./src/assets/imgs/13.c4.jpg"],
         stock: 50,
@@ -124,7 +124,7 @@ const products = [
     {
         id: 14,
         name: "Pumknin Spice Latte",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/14.c1.jpg", "./src/assets/imgs/14.c2.jpg", "./src/assets/imgs/14.c3.jpg", "./src/assets/imgs/14.c4.jpg"],
         stock: 50,
@@ -133,7 +133,7 @@ const products = [
     {
         id: 15,
         name: "Pumpkin Patch",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/15.c1.jpg", "./src/assets/imgs/15.c2.jpg", "./src/assets/imgs/15.c3.jpg", "./src/assets/imgs/15.c4.jpg"],
         stock: 50,
@@ -143,7 +143,7 @@ const products = [
     {
          id: 16,
          name: "Haunted",
-         price: 24.99,
+         price: 2.08,
          oz: [18, 24],
         images: ["./src/assets/imgs/16.c1.jpg", "./src/assets/imgs/16.c2.jpg", "./src/assets/imgs/16.c3.jpg", "./src/assets/imgs/16.c4.jpg"],
          stock: 50,
@@ -153,7 +153,7 @@ const products = [
     {
         id: 17,
         name: "Sugar Cookies",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/17.c1.jpg", "./src/assets/imgs/17.c2.jpg", "./src/assets/imgs/17.c3.jpg", "./src/assets/imgs/17.c4.jpg"],
         stock: 75,
@@ -162,7 +162,7 @@ const products = [
     {
         id: 18,
         name: "The Perfect Present",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/18.c1.jpg", "./src/assets/imgs/18.c2.jpg", "./src/assets/imgs/18.c3.jpg"],
         stock: 75,
@@ -171,7 +171,7 @@ const products = [
     {
         id: 19,
         name: "Melted Snowman",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/19.c1.jpg", "./src/assets/imgs/19.c2.jpg", "./src/assets/imgs/19.c3.jpg", "./src/assets/imgs/19.c4.jpg"],
         stock: 75,
@@ -180,7 +180,7 @@ const products = [
     {
         id: 20,
         name: "GingerBread",
-        price: 24.99,
+        price: 2.08,
         oz: [18, 24],
         images: ["./src/assets/imgs/20.c1.jpg", "./src/assets/imgs/20.c2.jpg", "./src/assets/imgs/20.c3.jpg", "./src/assets/imgs/20.c4.jpg"],
         stock: 75,
