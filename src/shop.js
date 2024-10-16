@@ -67,7 +67,7 @@ function loadAll(){
                     let namea = document.createElement('a');
 
                     let cardtitle = document.createElement('h5');
-                    cardtitle.innerText = currproduct.name;
+                    cardtitle.innerText = `${currproduct.name} (${currproduct.oz[0]}oz)`;
                     cardtitle.setAttribute('data-product-id', currproduct.id);
                     // namea.href = './product.html';
                     namea.addEventListener('click', function() {
@@ -81,13 +81,14 @@ function loadAll(){
                     cardbody.appendChild(namea);
     
                     let cardtext = document.createElement('p');
-                    cardtext.innerText = `$${currproduct.price}`;
+                    cardtext.innerText = `$${(currproduct.price * currproduct.oz[0]).toFixed(2)} ($${currproduct.price}/Ounce)`;
     
                     cardbody.appendChild(cardtext);
     
                     let buybutton = document.createElement('a');
                     buybutton.innerText = "Add to cart";
                     buybutton.classList.add('btn');
+                    buybutton.classList.add('buy-btn');
                     buybutton.addEventListener('click', function(){
                       addItemToCartHelper(currproduct.id,currproduct.oz[0],1);
                     })
