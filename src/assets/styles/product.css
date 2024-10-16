@@ -14,19 +14,21 @@ html, body {
 
   /* Columns */
 .left-column {
+    float: left;
     width: 65%;
     position: relative;
   }
    
   .right-column {
+    float: right;
     width: 35%;
-    margin-top: 60px;
+    padding: 10px;
   }
 
   /* Left Column */
 .left-column img {
-    width: 100%;
-    position: absolute;
+    width: 75%;
+    position:sticky; 
     left: 0;
     top: 0;
     opacity: 0;
@@ -61,11 +63,27 @@ html, body {
     color: #86939E;
     line-height: 24px;
   }
-
-  /* Product Price */
-.product-price {
+  /*Stock*/
+  .product-stock {
     display: flex;
     align-items: center;
+    padding-top: 5px;
+    width: 225px;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    width: 225px;
+  }
+
+  /* Product Price */
+  .product-price {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    width: 225px;
   }
    
   .product-price span {
@@ -84,6 +102,7 @@ html, body {
     text-decoration: none;
     padding: 12px 30px;
     transition: all .5s;
+    width: 10000px;
   }
   .cart-btn:hover {
     background-color: #64af3d;
