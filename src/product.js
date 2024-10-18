@@ -23,20 +23,20 @@ currProd = currProd - 1;
    let destTitle = document.getElementById('prdTitle');
    destTitle.innerText = Products[currProd].name;
 
+   let basePrice = Products[currProd].price;
    let destPrice = document.getElementById('prdPrice');
-   destPrice.innerText = `$${Products[currProd].price}`;
+   destPrice.innerText = `$${basePrice.toFixed(2)}`;
 
    let destStock = document.getElementById('prdStock');
    destStock.innerText = `Stock: ${Products[currProd].stock}`;
 
-   let sizeLen = 0;
-   sizeLen = Products[currProd].oz.length;
+   
+   let sizeLen = Products[currProd].oz.length;
 
-   let sizeImg = 0;
-   sizeImg = Products[currProd].images.length;
-
+   let sizeImg = Products[currProd].images.length;
    let prdOZ = document.getElementById('prdOZ');
-   prdOZ = Products[currProd].oz[0];
+   
+   
    
    if (Products[currProd].images && Products[currProd].images.length > 0) {
     // Set the first image as the main image
@@ -48,25 +48,57 @@ currProd = currProd - 1;
     destImg.classList.add('active');
 }
 
-for(let j = 0; j < sizeImg; j++)
-  {
- 
+// Clear the thumbnails div before appending new thumbnails
+let prdImg = document.getElementById('prdImg');
+prdImg.innerHTML = ''; // Clear previous thumbnails
+
+// Loop to create and append thumbnail images
+for (let j = 0; j < sizeImg; j++) {
     let a = document.createElement('img');
     a.src = Products[currProd].images[j];
     a.classList.add('altImages');
-    prdImg.appendChild(a);
-  }
+    a.setAttribute('data-index', j); // Add a data attribute to store the image index
 
-for(let i = 0; i < sizeLen; i++)
+    // Add event listener to each thumbnail image
+    a.addEventListener('click', function () {
+        swapImage(j); // Pass the clicked thumbnail index to swapImage function
+    });
+
+    prdImg.appendChild(a); // Append thumbnail to the container
+}
+
+
+for (let i = 0; i < sizeLen; i++) {
+  let li = document.createElement('li');
+  prdOZ.appendChild(li);
+  let a = document.createElement('a');
+  a.innerText = `${Products[currProd].oz[i]} oz`;
+  a.classList.add('dropdown-item');
+  li.appendChild(a);
+
+  // Add event listener to multiply the price by the ounce value on click
+  a.addEventListener('click', function () {
+      let selectedOunce = Products[currProd].oz[i];
+      let newPrice = basePrice * selectedOunce;
+
+      // Update the displayed price
+      destPrice.innerText = `$${newPrice.toFixed(2)}`;
+  });
+}
+
+if (sizeLen > 0) 
   {
-    let li=document.createElement('li');
-    prdOZ.appendChild(li);
-    let a=document.createElement('a');
-    a.innerText = Products[currProd].oz[i];
-    a.classList.add('dropdown-item');
-    li.appendChild(a);
+  let firstOunce = Products[currProd].oz[0]; // Get the first size option
+  let initialPrice = basePrice * firstOunce; // Multiply by the first ounce value
 
-  }
+  // Update the displayed price with the first ounce value
+  destPrice.innerText = `$${initialPrice.toFixed(2)}`;
+}
+
+}
+
+  
+
   function swapImage(index) {
     let destImg = document.getElementById('cardimg');
     let currProd = getProductIdFromUrl() - 1; // Get current product index
@@ -75,9 +107,9 @@ for(let i = 0; i < sizeLen; i++)
     } else {
         destImg.src = './src/assets/imgs/blank_candle.jpg'; // Fallback image
     }
-  }
+}
 
-  }
+  
 
  
 
