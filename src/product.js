@@ -31,17 +31,31 @@ currProd = currProd - 1;
 
    let sizeLen = 0;
    sizeLen = Products[currProd].oz.length;
+
+   let sizeImg = 0;
+   sizeImg = Products[currProd].images.length;
+
+   let prdOZ = document.getElementById('prdOZ');
+   prdOZ = Products[currProd].oz[0];
    
-  if (Products[currProd].images && Products[currProd].images.length > 0) {
-    // Set the first image and add the 'active' class
+   if (Products[currProd].images && Products[currProd].images.length > 0) {
+    // Set the first image as the main image
     destImg.src = Products[currProd].images[0];
-    destImg.classList.add('active'); // Add 'active' class to make it visible
+    destImg.classList.add('active');
 } else {
-    // Fallback image if no images are available
+    // Fallback image if there are no images
     destImg.src = './src/assets/imgs/blank_candle.jpg';
-    destImg.classList.add('active'); // Ensure fallback image is also visible
+    destImg.classList.add('active');
 }
-let destOZ = document.getElementById('prdOZ');
+
+for(let j = 0; j < sizeImg; j++)
+  {
+ 
+    let a = document.createElement('img');
+    a.src = Products[currProd].images[j];
+    a.classList.add('altImages');
+    prdImg.appendChild(a);
+  }
 
 for(let i = 0; i < sizeLen; i++)
   {
@@ -49,9 +63,23 @@ for(let i = 0; i < sizeLen; i++)
     prdOZ.appendChild(li);
     let a=document.createElement('a');
     a.innerText = Products[currProd].oz[i];
+    a.classList.add('dropdown-item');
     li.appendChild(a);
+
   }
+  function swapImage(index) {
+    let destImg = document.getElementById('cardimg');
+    let currProd = getProductIdFromUrl() - 1; // Get current product index
+    if (Products[currProd].images && Products[currProd].images.length > index) {
+        destImg.src = Products[currProd].images[index];
+    } else {
+        destImg.src = './src/assets/imgs/blank_candle.jpg'; // Fallback image
+    }
   }
+
+  }
+
+ 
 
 
 getProduct();

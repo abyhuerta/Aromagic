@@ -28,16 +28,35 @@ html, body {
   /* Left Column */
 .left-column img {
     width: 75%;
-    position:sticky; 
+    /* position:;  */
     left: 0;
     top: 0;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.3s ease;
+    padding: 20px;
   }
    
   .left-column img.active {
     opacity: 1;
   }
+
+  .thumbnails
+  {
+    display: flex;
+  justify-content: space-between;
+  }
+
+  .prdImg
+  {
+  margin-left: 65px;
+  padding-left: 150px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+  width: 40%;
+  }
+
 
   /* Product Description */
 .product-description {
