@@ -3,6 +3,7 @@ import { onAuthStateChanged } from 'firebase/auth';  // Import Firebase auth lis
 import { setCurrentUser } from './userState';  // Import your user state management
 import products from './catalog.js';
 import { addItemToCart } from './cart.js';
+import {signOut} from './signout.js';
 
 // Check auth state on page load
 onAuthStateChanged(auth, (user) => {
@@ -138,8 +139,11 @@ function loadAll(){
       addItemToCart(item.id, oz, qty);
     }
     
+    const signOutbtn = document.getElementById('signOutbtn');
 
-    
+    signOutbtn.addEventListener('click', function(){
+      signOut();
+    })
 
     document.addEventListener('DOMContentLoaded', function() {
       loadAll();

@@ -1,0 +1,54 @@
+:root{
+    --primary-color: #F9F5E7;
+    --secondary-color: #795757;
+    --tertiary-color: #664343;
+    --quadra-color: #3B3030;
+
+    --main-font:var(--main-font);
+    --heading-font: ;
+    --text-font: ;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+.form-label{
+    color: var(--primary-color);
+}
+
+.form-body{
+    width: 400px;
+    margin:auto auto auto;
+    background-color: var(--quadra-color);
+    padding: 1% 3%;
+    border-radius: 4%;
+    color: var(--primary-color);
+}
+
+.submit{
+    width: 5em;
+    border-width: 0;
+}
+.submit:hover{
+    background-color:var(--tertiary-color);
+    border-width: 0;
+    color:var(--primary-color)
+}
+
+a{
+    color:#F9F5E7
+}
+
+h1{
+    text-align: center;
+    color:var(--quadra-color);
+}
+
+h2{
+    color: var(--secondary-color)
+}
+
+a:hover{
+    color: #795757;
+}
