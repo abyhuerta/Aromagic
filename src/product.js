@@ -62,10 +62,23 @@ for (let j = 0; j < sizeImg; j++) {
     // Add event listener to each thumbnail image
     a.addEventListener('click', function () {
         swapImage(j); // Pass the clicked thumbnail index to swapImage function
+        highlightSelectedThumbnail(a);
     });
 
     prdImg.appendChild(a); // Append thumbnail to the container
 }
+
+function highlightSelectedThumbnail(selectedThumbnail) {
+  // Remove the active-border class from all thumbnails
+  let thumbnails = document.querySelectorAll('.altImages');
+  thumbnails.forEach(function (thumbnail) {
+      thumbnail.classList.remove('active-border');
+  });
+
+  // Add the active-border class to the selected thumbnail
+  selectedThumbnail.classList.add('active-border');
+}
+
 
 
 for (let i = 0; i < sizeLen; i++) {

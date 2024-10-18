@@ -140,3 +140,9 @@ html, body {
   .cart-btn:hover {
     background-color: #664343;
   }
+
+  .active-border {
+    border: 2px solid #664343; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+    transition: border 0.3s ease; 
+}
