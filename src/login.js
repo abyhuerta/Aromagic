@@ -5,7 +5,7 @@ import { setCurrentUser } from './userState'; // Import user state functions
 const newEntry = document.getElementById('submit');
 
 // Set persistence for auth
-setPersistence(auth, browserLocalPersistence)
+setPersistence(auth, browserSessionPersistence)
   .then(() => {
     newEntry.addEventListener('click', function(event) {
       const email = document.getElementById('user-email').value;

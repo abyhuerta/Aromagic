@@ -1,1 +1,38 @@
 /* include nav bar and footers, and any shared styling accross all pages. */
+/* .card-img-top{
+    width: 20em;
+} */
+:root{
+    --primary-color: #F9F5E7;
+    --secondary-color: #795757;
+    --tertiary-color: #664343;
+    --quadra-color: #3B3030;
+
+    --main-font:var(--main-font);
+    --heading-font: ;
+    --text-font: ;
+}
+
+body{
+
+    margin:0;
+    background-color: #F9F5E7;
+
+}
+
+.navbar{
+    background-color: var(--quadra-color);
+}
+
+.navbar a{
+    color:var(--primary-color);
+}
+
+.navbar-brand{
+    color: var(--primary-color);
+}
+
+.item-search-btn{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
