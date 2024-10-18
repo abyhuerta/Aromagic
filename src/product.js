@@ -10,16 +10,9 @@ function getProductIdFromUrl() {
 console.log(getProductIdFromUrl());
 function getProduct()
 {
-let currProd = 0;
-//for(i = 0; i < Products.length(); i++)
-//{
-  
-    //if(exportProductNum == Products[i].id)
-      //{
-        //currProd = i;
-      //}
-    
-  //}
+let currProd = getProductIdFromUrl();
+currProd = currProd - 1;
+
    let destination = document.getElementById('product-home');
 
    let destImg = document.getElementById('cardimg');
@@ -31,22 +24,62 @@ let currProd = 0;
    destTitle.innerText = Products[currProd].name;
 
    let destPrice = document.getElementById('prdPrice');
-   destPrice.innerText = Products[currProd].price;
+   destPrice.innerText = `$${Products[currProd].price}`;
 
    let destStock = document.getElementById('prdStock');
-   destStock.innerText = Products[currProd].stock;
+   destStock.innerText = `Stock: ${Products[currProd].stock}`;
 
-   //for(j = 0; j < Product[currProd].images.length; j++)
-   //{
-   //destImg.src = Products[currProd].images[j];
-   //}
-   if (currProd.images && currProd.images.length > 0) 
-    {
-    destImg.src = currProd.images[0];
+   let sizeLen = 0;
+   sizeLen = Products[currProd].oz.length;
+
+   let sizeImg = 0;
+   sizeImg = Products[currProd].images.length;
+
+   let prdOZ = document.getElementById('prdOZ');
+   prdOZ = Products[currProd].oz[0];
+   
+   if (Products[currProd].images && Products[currProd].images.length > 0) {
+    // Set the first image as the main image
+    destImg.src = Products[currProd].images[0];
+    destImg.classList.add('active');
 } else {
-    destImg.src = './src/assets/imgs/blank_candle.jpg'; // A fallback image if the array is empty
+    // Fallback image if there are no images
+    destImg.src = './src/assets/imgs/blank_candle.jpg';
+    destImg.classList.add('active');
 }
+
+for(let j = 0; j < sizeImg; j++)
+  {
+ 
+    let a = document.createElement('img');
+    a.src = Products[currProd].images[j];
+    a.classList.add('altImages');
+    prdImg.appendChild(a);
   }
+
+for(let i = 0; i < sizeLen; i++)
+  {
+    let li=document.createElement('li');
+    prdOZ.appendChild(li);
+    let a=document.createElement('a');
+    a.innerText = Products[currProd].oz[i];
+    a.classList.add('dropdown-item');
+    li.appendChild(a);
+
+  }
+  function swapImage(index) {
+    let destImg = document.getElementById('cardimg');
+    let currProd = getProductIdFromUrl() - 1; // Get current product index
+    if (Products[currProd].images && Products[currProd].images.length > index) {
+        destImg.src = Products[currProd].images[index];
+    } else {
+        destImg.src = './src/assets/imgs/blank_candle.jpg'; // Fallback image
+    }
+  }
+
+  }
+
+ 
 
 
 getProduct();

@@ -1,6 +1,22 @@
-import products from './catalog.js'
+import { auth } from './firebaseConfig';  // Import Firebase auth
+import { onAuthStateChanged } from 'firebase/auth';  // Import Firebase auth listener
+import { setCurrentUser } from './userState';  // Import your user state management
+import products from './catalog.js';
 import { addItemToCart } from './cart.js';
-import { getCurrentUserId } from './userState.js';
+import {signOut} from './signout.js';
+
+// Check auth state on page load
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, set the current user
+    setCurrentUser(user);
+    console.log("User is signed in:", user);
+  } else {
+    // No user is signed in, redirect to login or show message
+    console.error("No user is signed in.");
+    window.location.href = "login.html";  // Redirect to login if needed
+  }
+});
 //--------------------------code for shop.html-------------------------
 
 //TODO: load products by category,size,price,all
@@ -52,7 +68,7 @@ function loadAll(){
                     let namea = document.createElement('a');
 
                     let cardtitle = document.createElement('h5');
-                    cardtitle.innerText = currproduct.name;
+                    cardtitle.innerText = `${currproduct.name} (${currproduct.oz[0]}oz)`;
                     cardtitle.setAttribute('data-product-id', currproduct.id);
                     // namea.href = './product.html';
                     namea.addEventListener('click', function() {
@@ -66,15 +82,16 @@ function loadAll(){
                     cardbody.appendChild(namea);
     
                     let cardtext = document.createElement('p');
-                    cardtext.innerText = `$${currproduct.price}`;
+                    cardtext.innerText = `$${(currproduct.price * currproduct.oz[0]).toFixed(2)} ($${currproduct.price}/Ounce)`;
     
                     cardbody.appendChild(cardtext);
     
                     let buybutton = document.createElement('a');
                     buybutton.innerText = "Add to cart";
                     buybutton.classList.add('btn');
+                    buybutton.classList.add('buy-btn');
                     buybutton.addEventListener('click', function(){
-                      addItemToCart(currproduct.id);
+                      addItemToCartHelper(currproduct.id,currproduct.oz[0],1);
                     })
     
                     cardbody.appendChild(buybutton);
@@ -99,11 +116,34 @@ function loadAll(){
     }
 
 
-    function addItemToCartHelper(productID){
-      addItemToCart(productID);
-    }
-
+    function addItemToCartHelper(productID, oz, qty) {
+      const item = products.find(product => product.id === productID);
     
+      if (!item) {
+        console.error("Product not found");
+        return;
+      }
+    
+      // Validate the 'oz' argument
+      if (!oz || !item.oz.includes(oz)) {
+        console.error("Invalid size (oz) specified:", oz);
+        return;
+      }
+    
+      // Validate the 'qty' argument
+      if (!qty || qty <= 0) {
+        console.error("Invalid quantity:", qty);
+        return;
+      }
+    
+      addItemToCart(item.id, oz, qty);
+    }
+    
+    const signOutbtn = document.getElementById('signOutbtn');
+
+    signOutbtn.addEventListener('click', function(){
+      signOut();
+    })
 
     document.addEventListener('DOMContentLoaded', function() {
       loadAll();

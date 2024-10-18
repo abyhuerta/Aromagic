@@ -31,6 +31,13 @@ body{
     color: var(--primary-color);
 }
 
-.card{
-    /* width: 25em; */
+.item-search-btn{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.buy-btn{
+    background-color: var(--quadra-color);
+    color: var(--primary-color);
+    border-color: var(--quadra-color);
 }
