@@ -109,6 +109,7 @@ html, body {
     align-items: center;
     padding-top: 5px;
     width: 225px;
+    margin-left: 10px;
   }
 
   /* Product Price */
@@ -137,12 +138,59 @@ html, body {
     transition: all .5s;
     width: 10000px;
   }
+  
   .cart-btn:hover {
     background-color: #664343;
   }
 
   .active-border {
     border: 2px solid #664343; 
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2); 
     transition: border 0.3s ease; 
+}
+
+.quantity-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-section label {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  background-color: #795757;
+  border: 1px solid #664343;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  color: white;
+}
+
+.quantity-controls button:hover {
+  background-color: #664343;
+}
+
+.quantity-controls input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #999;
+  margin: 0 5px;
+  border-radius: 4px;
+  background-color: #fff;
 }
