@@ -1,4 +1,5 @@
 import Products from "./catalog.js"
+import {addItemToCart} from './cart.js';
 // import exportProductNum from "./shop.js"
 function getProductIdFromUrl() {
     const queryString = window.location.search;
@@ -106,6 +107,60 @@ if (sizeLen > 0)
 
   // Update the displayed price with the first ounce value
   destPrice.innerText = `$${initialPrice.toFixed(2)}`;
+}
+
+let addToCartButton = document.getElementById('addToCartBtn');
+    addToCartButton.addEventListener('click', function () {
+        let selectedOunce = document.querySelector('.dropdown-item.active')?.innerText?.split(' ')[0];
+        if (!selectedOunce) {
+            selectedOunce = Products[currProd].oz[0];
+        }
+        let quantity = parseInt(document.getElementById('quantity').value) || 1;
+
+        addItemToCartHelper(currProd + 1, selectedOunce, quantity);
+    });
+
+    // Implement increment and decrement functionality
+    let quantityInput = document.getElementById('quantity');
+    let incrementBtn = document.getElementById('incrementBtn');
+    let decrementBtn = document.getElementById('decrementBtn');
+
+    incrementBtn.addEventListener('click', function () {
+        let currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1;
+    });
+
+    decrementBtn.addEventListener('click', function () {
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    });
+
+function addItemToCartHelper(currProd, oz, qty) 
+{
+  const item = Products.find(product => product.id === currProd);
+
+  if (!item) {
+    console.error("Product not found");
+    return;
+  }
+
+  // Validate the 'oz' argument
+  if (!oz || !item.oz.includes(oz)) {
+    console.error("Invalid size (oz) specified:", oz);
+    return;
+  }
+
+  // Validate the 'qty' argument
+  if (!qty || qty <= 0) {
+    console.error("Invalid quantity:", qty);
+    return;
+  }
+
+  
+
+  addItemToCart(item.id, oz, qty);
 }
 
 }

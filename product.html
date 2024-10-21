@@ -40,6 +40,15 @@
                     <li><> -->
                   </ul>
                 </div>
+
+                <div class="quantity-section">
+                  <label for="quantity">Quantity:</label>
+                  <div class="quantity-controls">
+                      <button id="decrementBtn" type="button">-</button>
+                      <input id="quantity" type="number" value="1" min="1" readonly>
+                      <button id="incrementBtn" type="button">+</button>
+                  </div>
+              </div>
          
                 <a href="#"></a>
               </div>
@@ -47,7 +56,11 @@
 
               <div class="product-price">
                 <span id = "prdPrice"> </span>
-                <a href="#" class="cart-btn">Add to cart</a>
+
+
+              <!-- Add to Cart Button -->
+              <a href="#" id="addToCartBtn" class="cart-btn">Add to cart</a>
+
               </div>
 
             </div>
