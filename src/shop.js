@@ -12,7 +12,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, set the current user
     setCurrentUser(user);
     console.log("User is signed in:", user);
-    getUserCart(user.uid);
+    // getUserCart(user.uid);
   } else {
     // No user is signed in, redirect to login or show message
     console.error("No user is signed in.");

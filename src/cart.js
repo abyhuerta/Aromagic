@@ -156,6 +156,5 @@ export const getUserCart = async(userId) => {
 
 }
 
-// getUserCart(q1AZtA08MbVQfdbrvImQFOAv46m1);
 
 //example of usage fOR REMOVAL : removeItemFromCart('productID1', 18, 1);
