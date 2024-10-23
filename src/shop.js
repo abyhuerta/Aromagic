@@ -3,6 +3,7 @@ import { onAuthStateChanged } from 'firebase/auth';  // Import Firebase auth lis
 import { setCurrentUser } from './userState';  // Import your user state management
 import products from './catalog.js';
 import { addItemToCart } from './cart.js';
+import { getUserCart } from './cart.js';
 import {signOut} from './signout.js';
 
 // Check auth state on page load
@@ -11,6 +12,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, set the current user
     setCurrentUser(user);
     console.log("User is signed in:", user);
+    // getUserCart(user.uid);
   } else {
     // No user is signed in, redirect to login or show message
     console.error("No user is signed in.");
@@ -148,5 +150,7 @@ function loadAll(){
     document.addEventListener('DOMContentLoaded', function() {
       loadAll();
   });
+
+
 
    export default{addItemToCart};
