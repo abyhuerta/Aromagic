@@ -36,6 +36,7 @@ currProd = currProd - 1;
 
    let sizeImg = Products[currProd].images.length;
    let prdOZ = document.getElementById('prdOZ');
+   let selectedOunce = Products[currProd].oz[0];
    
    
    
@@ -92,12 +93,13 @@ for (let i = 0; i < sizeLen; i++) {
 
   // Add event listener to multiply the price by the ounce value on click
   a.addEventListener('click', function () {
-      let selectedOunce = Products[currProd].oz[i];
+      selectedOunce = Products[currProd].oz[i];
       let newPrice = basePrice * selectedOunce;
 
       // Update the displayed price
       destPrice.innerText = `$${newPrice.toFixed(2)}`;
   });
+  let ounceSelect = selectedOunce;
 }
 
 if (sizeLen > 0) 
@@ -110,15 +112,12 @@ if (sizeLen > 0)
 }
 
 let addToCartButton = document.getElementById('addToCartBtn');
-    addToCartButton.addEventListener('click', function () {
-        let selectedOunce = document.querySelector('.dropdown-item.active')?.innerText?.split(' ')[0];
-        if (!selectedOunce) {
-            selectedOunce = Products[currProd].oz[0];
-        }
-        let quantity = parseInt(document.getElementById('quantity').value) || 1;
+addToCartButton.addEventListener('click', function () {
+    let quantity = parseInt(document.getElementById('quantity').value) || 1;
+    addItemToCartHelper(currProd + 1, selectedOunce, quantity);
+});
 
-        addItemToCartHelper(currProd + 1, selectedOunce, quantity);
-    });
+
 
     // Implement increment and decrement functionality
     let quantityInput = document.getElementById('quantity');
@@ -161,6 +160,8 @@ function addItemToCartHelper(currProd, oz, qty)
   
 
   addItemToCart(item.id, oz, qty);
+  
+  alert(`Added ${item.name} (${oz} oz) to the cart. Quantity: ${qty}`);
 }
 
 }

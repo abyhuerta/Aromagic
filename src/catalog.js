@@ -8,7 +8,8 @@ const products = [
         oz: [10,18,24],
         images: ['./src/assets/imgs/c1-1.jpg','./src/assets/imgs/c1-2.jpg','./src/assets/imgs/c1-3.jpg','./src/assets/imgs/c1-4.jpg'],
         stock: 100,
-        description: "Experience the enchanting aroma of our original blend. It features a harmonious mix of floral and earthy notes, designed to uplift your spirit and create an inviting ambiance."
+        description: "Experience the enchanting aroma of our original blend. It features a harmonious mix of floral and earthy notes, designed to uplift your spirit and create an inviting ambiance.",
+        
     },
     {
         id: 2,
