@@ -114,7 +114,7 @@ if (sizeLen > 0)
 let addToCartButton = document.getElementById('addToCartBtn');
 addToCartButton.addEventListener('click', function () {
     let quantity = parseInt(document.getElementById('quantity').value) || 1;
-    addItemToCartHelper(currProd + 1, selectedOunce, quantity);
+    addItemToCartHelper(currProd + 1, selectedOunce, quantity, destStock);
 });
 
 
@@ -136,7 +136,7 @@ addToCartButton.addEventListener('click', function () {
         }
     });
 
-function addItemToCartHelper(currProd, oz, qty) 
+function addItemToCartHelper(currProd, oz, qty, stock) 
 {
   const item = Products.find(product => product.id === currProd);
 
@@ -158,10 +158,16 @@ function addItemToCartHelper(currProd, oz, qty)
   }
 
   
+if(stock - qty == 0)
+  {
+    console.log();
+    console.error("We have ran out of this product.");
+    return;
+  }
 
   addItemToCart(item.id, oz, qty);
   
-  alert(`Added ${item.name} (${oz} oz) to the cart. Quantity: ${qty}`);
+  showNotification(`Added (${oz} oz) ${item.name} to the cart. Quantity: ${qty}`);
 }
 
 }
@@ -176,6 +182,17 @@ function addItemToCartHelper(currProd, oz, qty)
     } else {
         destImg.src = './src/assets/imgs/blank_candle.jpg'; // Fallback image
     }
+}
+
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.innerText = message; // Set the custom message
+  notification.style.display = 'block'; // Show the notification
+
+  // Hide the notification after 3 seconds
+  setTimeout(function () {
+      notification.style.display = 'none';
+  }, 3000);
 }
 
   
