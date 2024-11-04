@@ -1,0 +1,61 @@
+/* body{
+    position: relative;
+} */
+
+ img{
+      position:relative;    
+    left: 150px; 
+    /* top: 150px; */
+    width: 600px; 
+    height: 600px; 
+    /* padding-bottom: 500px;*/
+}  
+
+ /*.carousel-item{
+
+/* background-color:aquamarine; 
+position: relative;
+background-image: url("./src/assets/imgs/11.c1.jpg");
+background-size: cover;
+width: 1500px;
+justify-content: space-between; 
+
+} */
+
+h1 {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: italic;
+    color: #3B3030
+  }
+
+.carousel-inner{
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+.background-box{
+    position: relative;
+    background-color: #795757;; /* Change color and opacity as needed */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect */
+    z-index: 0;
+
+}
+/* .right{
+    margin-left: 200px;
+} */
+
+/* .btn{
+    background-color: blue;
+    color:black;
+    
+
+} */
+
+.footer{
+    
+    padding-top: 500px;
+
+}
