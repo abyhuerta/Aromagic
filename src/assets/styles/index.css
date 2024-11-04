@@ -41,7 +41,18 @@ h1 {
     border-radius: 10px; /* Optional: rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect */
     z-index: 0;
+}
 
+shop-btn{
+    text-align: center; /* Center the button */
+    margin-top: 20px;
+    padding-right: 20px;
+
+}
+
+#btn-container{
+    margin: auto;
+    width: 200px;
 }
 /* .right{
     margin-left: 200px;
