@@ -141,5 +141,20 @@ export const removeItemFromCart = async (productID, oz, qty) => {
   }
 };
 
+export const getUserCart = async(userId) => {
+  userId = getCurrentUserId();
+  if (!userId) {
+    console.error("User is not logged in.");
+    return;
+  }
+
+  const cartRef = doc(db, 'cart', userId);
+
+  // Retrieve the cart data
+  const cartDoc = await getDoc(cartRef);
+  console.log("Document data: ",cartDoc.data())
+
+}
+
 
 //example of usage fOR REMOVAL : removeItemFromCart('productID1', 18, 1);

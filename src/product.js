@@ -1,4 +1,6 @@
 import Products from "./catalog.js"
+import {addItemToCart} from './cart.js';
+import products from "./catalog.js";
 // import exportProductNum from "./shop.js"
 function getProductIdFromUrl() {
     const queryString = window.location.search;
@@ -30,11 +32,15 @@ currProd = currProd - 1;
    let destStock = document.getElementById('prdStock');
    destStock.innerText = `Stock: ${Products[currProd].stock}`;
 
+   let destType = document.getElementById('recImg');
+   destType = Products[currProd].type;
+
    
    let sizeLen = Products[currProd].oz.length;
 
    let sizeImg = Products[currProd].images.length;
    let prdOZ = document.getElementById('prdOZ');
+   let selectedOunce = Products[currProd].oz[0];
    
    
    
@@ -91,12 +97,13 @@ for (let i = 0; i < sizeLen; i++) {
 
   // Add event listener to multiply the price by the ounce value on click
   a.addEventListener('click', function () {
-      let selectedOunce = Products[currProd].oz[i];
+      selectedOunce = Products[currProd].oz[i];
       let newPrice = basePrice * selectedOunce;
 
       // Update the displayed price
       destPrice.innerText = `$${newPrice.toFixed(2)}`;
   });
+  let ounceSelect = selectedOunce;
 }
 
 if (sizeLen > 0) 
@@ -107,6 +114,74 @@ if (sizeLen > 0)
   // Update the displayed price with the first ounce value
   destPrice.innerText = `$${initialPrice.toFixed(2)}`;
 }
+
+let addToCartButton = document.getElementById('addToCartBtn');
+addToCartButton.addEventListener('click', function () {
+    let quantity = parseInt(document.getElementById('quantity').value) || 1;
+    addItemToCartHelper(currProd + 1, selectedOunce, quantity, destStock);
+});
+
+
+
+    // Implement increment and decrement functionality
+    let quantityInput = document.getElementById('quantity');
+    let incrementBtn = document.getElementById('incrementBtn');
+    let decrementBtn = document.getElementById('decrementBtn');
+
+    incrementBtn.addEventListener('click', function () {
+        let currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1;
+    });
+
+    decrementBtn.addEventListener('click', function () {
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    });
+
+function addItemToCartHelper(currProd, oz, qty, stock) 
+{
+  const item = Products.find(product => product.id === currProd);
+
+  if (!item) {
+    console.error("Product not found");
+    return;
+  }
+
+  // Validate the 'oz' argument
+  if (!oz || !item.oz.includes(oz)) {
+    console.error("Invalid size (oz) specified:", oz);
+    return;
+  }
+
+  // Validate the 'qty' argument
+  if (!qty || qty <= 0) {
+    console.error("Invalid quantity:", qty);
+    return;
+  }
+
+  
+if(stock - qty == 0)
+  {
+    console.log();
+    console.error("We have ran out of this product.");
+    return;
+  }
+
+  addItemToCart(item.id, oz, qty);
+  
+  showNotification(`Added (${oz} oz) ${item.name} to the cart. Quantity: ${qty}`);
+}
+
+// for (let h = 0; h < products.length; h++) {
+//   let li = document.createElement('li');
+//   prdOZ.appendChild(li);
+//   let a = document.createElement('a');
+//   a.innerText = `${Products[currProd].type[i]} oz`;
+//   a.classList.add('recImg');
+//   li.appendChild(a);
+// }
 
 }
 
@@ -120,6 +195,17 @@ if (sizeLen > 0)
     } else {
         destImg.src = './src/assets/imgs/blank_candle.jpg'; // Fallback image
     }
+}
+
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.innerText = message; // Set the custom message
+  notification.style.display = 'block'; // Show the notification
+
+  // Hide the notification after 3 seconds
+  setTimeout(function () {
+      notification.style.display = 'none';
+  }, 3000);
 }
 
   
