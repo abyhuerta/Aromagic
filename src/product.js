@@ -1,5 +1,6 @@
 import Products from "./catalog.js"
 import {addItemToCart} from './cart.js';
+import products from "./catalog.js";
 // import exportProductNum from "./shop.js"
 function getProductIdFromUrl() {
     const queryString = window.location.search;
@@ -30,6 +31,9 @@ currProd = currProd - 1;
 
    let destStock = document.getElementById('prdStock');
    destStock.innerText = `Stock: ${Products[currProd].stock}`;
+
+   let destType = document.getElementById('recImg');
+   destType = Products[currProd].type;
 
    
    let sizeLen = Products[currProd].oz.length;
@@ -169,6 +173,15 @@ if(stock - qty == 0)
   
   showNotification(`Added (${oz} oz) ${item.name} to the cart. Quantity: ${qty}`);
 }
+
+// for (let h = 0; h < products.length; h++) {
+//   let li = document.createElement('li');
+//   prdOZ.appendChild(li);
+//   let a = document.createElement('a');
+//   a.innerText = `${Products[currProd].type[i]} oz`;
+//   a.classList.add('recImg');
+//   li.appendChild(a);
+// }
 
 }
 
