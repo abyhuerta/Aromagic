@@ -13,7 +13,7 @@
     <!---------------- Google fonts -------------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Sixtyfour+Convergence&family=Yatra+One&display=swap" rel="stylesheet">
 
   </head>
   <body>
@@ -69,6 +69,7 @@
     <!-- <button type="button" class="btn"><a href="https://www.utsa.edu/about/">go to utsa website</a></button> -->
 
 <div class="background-box"></div>
+<!-------------------------------- Candle Carousel--------------------------->
     <div id="carouselExample" class="carousel slide" data-bs-theme="dark" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -117,35 +118,54 @@
 </button>
 </div>
 
+<!----------------- Our Mission Section ----------------------->
+<div class="container-fluid py-4">
+  <div class="container mission">
+      <h2 class="text-center mb-4">Our Mission</h2>
+      <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-6">
+              <div class="bg-light p-4 rounded-3">
+                  <h3 class="text-secondary Our-Purpose">Our Purpose</h3>
+                  <p>"At Aromagic, we believe that luxury and playfulness can coexist in every flicker of a flame. Our mission is to create high-quality, beautifully crafted candles that elevate your space without breaking the bank. We combine premium ingredients, unique scents, and a touch of whimsy to bring a little more light, warmth, and joy into your everyday moments—making luxury feel accessible and fun for everyone.</p>
+              </div>
+          </div>
+          <!-- Right Column -->
+          <div class="col-md-6">
+              <img src="./src/assets/imgs/mission.jpg" class="img-fluid rounded-3" alt="Mission Image">
+          </div>
+      </div>
+  </div>
+</div>
 
 
     <!-- Customer Testimonials Carousel -->
-<div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="testimonialsCarousel" class="carousel slide customer-carousel" data-bs-ride="carousel">
   <div class="carousel-inner">
       <!-- Testimonial 1 -->
       <div class="carousel-item active" style="height: 400px;">
-          <img src="https://via.placeholder.com/1920x400.png?text=Customer+Image+1" class="d-block w-100" alt="Customer Image 1">
-          <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-light">"Absolutely love my candles!"</h5>
-              <p class="text-light">- Sarah W.</p>
+          <img src="./src/assets/imgs/testimonial-1.jpg" class="d-block" alt="Customer Image 1" style="width: 650px; height:550px;">
+          <div class="carousel-caption d-none d-md-block quotes">
+              <h5 class = "testimony">"What I love about Arogamic candles is how diverse their collection is! Whether I’m in the mood for something fresh and light or deep and warm, they have a scent for every occasion. The variety is incredible, and no matter what I choose, it always creates the perfect vibe. These candles never disappoint!"</h5>
+              <p class style="text-align: right">- Sarah W.</p>
           </div>
       </div>
 
       <!-- Testimonial 2 -->
       <div class="carousel-item" style="height: 400px;">
-          <img src="https://via.placeholder.com/1920x400.png?text=Customer+Image+2" class="d-block w-100" alt="Customer Image 2">
-          <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-light">"The scents are incredible!"</h5>
-              <p class="text-light">- James K.</p>
+        <img src="./src/assets/imgs/testimonial-2.jpg" class="d-block" alt="Customer Image 2" style="width: 650px; height:550px;">
+          <div class="carousel-caption d-none d-md-block quotes">
+              <h5 class = "testimony">"Arogamic candles have the most fun and unexpected scents! Each one is like a little adventure for your senses. From fresh, fruity notes to cozy, warm blends, there's always something new to discover. They make every space feel unique and inviting. I can’t wait to try them all!"</h5>
+              <p class style="text-align: right">- James K.</p>
           </div>
       </div>
 
       <!-- Testimonial 3 -->
       <div class="carousel-item" style="height: 400px;">
-          <img src="https://via.placeholder.com/1920x400.png?text=Customer+Image+3" class="d-block w-100" alt="Customer Image 3">
-          <div class="carousel-caption d-none d-md-block">
-              <h5 class="text-light">"Best candle supplies ever!"</h5>
-              <p class="text-light">- Emily R.</p>
+        <img src="./src/assets/imgs/testimonial-3.jpg" class="d-block" alt="Customer Image 3" style="width: 650px; height:550px;">
+          <div class="carousel-caption d-none d-md-block quotes">
+              <h5 class ="testimony">"Arogamic candles are a game-changer! The scents are amazing and fill the room without being overpowering. I love how well they burn and the quality is unmatched. They create the perfect ambiance for any occasion. I’m hooked!"</h5>
+              <p class style="text-align: right">- Emily R.</p>
           </div>
       </div>
   </div>

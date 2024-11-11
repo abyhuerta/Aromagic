@@ -9,18 +9,19 @@
     width: 600px; 
     height: 600px; 
     /* padding-bottom: 500px;*/
+    /* margin:auto; */
 }  
 
- /*.carousel-item{
+  /* .carousel-item{
 
-/* background-color:aquamarine; 
-position: relative;
-background-image: url("./src/assets/imgs/11.c1.jpg");
-background-size: cover;
-width: 1500px;
-justify-content: space-between; 
+background-color:#795757; 
+/* position: relative; */
+/* background-size: cover; */
+/* width: 1500px; */
+/* justify-content: space-between;  */
+/* margin:auto; 
 
-} */
+}   */
 
 h1 {
     font-family: "Bona Nova SC", serif;
@@ -30,43 +31,94 @@ h1 {
   }
 
 .carousel-inner{
+    /* margin:auto; */
     padding-bottom: 50px;
     justify-content: space-between;
 }
-.background-box{
+/* .background-box{
     position: relative;
-    background-color: #795757;; /* Change color and opacity as needed */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    border-radius: 10px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect */
+    background-color: #795757; /* Change color and opacity as needed 
+    width: 100%; /* Full width 
+    height: 100%; /* Full height 
+    border-radius: 10px; /* Optional: rounded corners 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect 
     z-index: 0;
-}
+} */
 
-shop-btn{
-    text-align: center; /* Center the button */
+/* shop-btn{
+    text-align: center; /* Center the button 
     margin-top: 20px;
     padding-right: 20px;
-
+    /* color: #3B3030 
+    color: white;
+} */
+.shop-btn{
+    font-family:'Georgia', serif; 
+    background-color: #3B3030;
+    border: white;
+    color: white;
+    border-radius: 0px;
+    font-size: 20px;
+    
 }
+ .shop-btn:hover {
+    /* background-color: #3B3030;   */
+    background-color:#795757;
+ }
 
 #btn-container{
-    margin: auto;
-    width: 200px;
+     margin: auto;
+     width: 170px;
+    padding-top:50px;
+    
+   
 }
-/* .right{
-    margin-left: 200px;
+.mission{
+    font-family: 'Georgia', serif; 
+    padding-top: 150px;
+    padding-bottom: 150px;
+    /* background-color:#795757;
+    border-radius: 5px; */
+}
+/* .Our-Purpose{
+    background-color:#795757;
 } */
 
-/* .btn{
-    background-color: blue;
-    color:black;
+.carousel-inner{
+    /* margin:auto; */
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+
+
+.quotes{
+    text-align: left;
+    /* background-color:#795757; */
+    margin-left: 650px;
+    border-color: white;
+    border-radius: 5px;
+    font-size:28px;
+    color:#3B3030 ;
+    /* padding-bottom:500px; */
+}
+.customer-carousel{
+  padding-bottom:50px;
+   font-family: 'Georgia', serif;
+   font-size:5px;
+   font-style:italic;
+   font-weight:bold;
+   /* color:#3B3030; */
+}
+
+.testimony{
+
+    font-size: 20px;
     
 
-} */
+}
 
-.footer{
-    
+
+/* .footer{
     padding-top: 500px;
 
-}
+} */
