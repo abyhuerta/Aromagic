@@ -41,6 +41,7 @@ currProd = currProd - 1;
    let sizeImg = Products[currProd].images.length;
    let prdOZ = document.getElementById('prdOZ');
    let selectedOunce = Products[currProd].oz[0];
+
    
    
    
@@ -139,6 +140,8 @@ addToCartButton.addEventListener('click', function () {
             quantityInput.value = currentQuantity - 1;
         }
     });
+
+    
 
 function addItemToCartHelper(currProd, oz, qty, stock) 
 {
