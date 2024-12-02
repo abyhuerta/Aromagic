@@ -78,8 +78,13 @@ onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       console.log("User is signed in:", user);
       console.log("DOC DATA: ", getUserCart(user.uid));
-
       fetchCartData(user.uid).then(displayCartItems);
+      let promiseobj = getUserTotal(user.uid)
+      promiseobj.then(result => {
+        console.log(result);
+      })
+      console.log("user tot:", promiseobj);
+      console.log(getUserItems(user.uid));
   
     } else {
       // No user is signed in, redirect to login or show message

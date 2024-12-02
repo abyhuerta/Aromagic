@@ -151,8 +151,8 @@ export const getUserCart = async(userId) => {
 
   // Retrieve the cart data
   const cartDoc = await getDoc(cartRef);
-  console.log("Document data: ",cartDoc.data())
-
+  // console.log("Document data: ",cartDoc.data())
+  return(cartDoc.data());
 }
 
 export const getUserTotal = async(userId) => {
@@ -163,7 +163,9 @@ export const getUserTotal = async(userId) => {
   }
   const totalRef = doc(db,'cart',userId);
   const totalDoc = await getDoc(totalRef);
-  console.log("Document total: ", totalDoc.data().total);
+  const total = totalDoc.data().total;
+  // console.log("Document total: ", total);
+  return total;
 }
 
 export const getUserItems = async(userId) => {
@@ -174,7 +176,8 @@ export const getUserItems = async(userId) => {
   }
   const productRef = doc(db,'cart',userId);
   const productDoc = await getDoc(productRef);
-  console.log("Document total: ", productDoc.data().products);
+  // console.log("Document total: ", productDoc.data().products);
+  return(productDoc.data().products)
 }
 
 // getUserTotal()
