@@ -37,8 +37,6 @@ body{
     border-color: var(--primary-color);
 }
 
-.footer{
+.p-3{
     background-color: #3B3030;
-	color:#F9F5E7
 }
-
