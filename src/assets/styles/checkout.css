@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #F9F5E7; /* Background color */
+    --secondary-color: #795757; /* Accent for buttons, headings */
+    --tertiary-color: #664343; /* Borders, shadows */
+    --quadra-color: #3B3030; /* Text color */
+
+    --main-font: 'Arial', sans-serif;
+    --heading-font: 'Georgia', serif;
+    --text-font: 'Verdana', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: var(--primary-color); /* Primary as background */
+    color: var(--quadra-color); /* Quadra for text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White for container background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color); /* Secondary for heading text */
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color); /* Use primary color for item background */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--tertiary-color); /* Tertiary for borders */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    max-width: 50px;
+    border-radius: 5px;
+    border: 1px solid var(--tertiary-color); /* Tertiary for image border */
+}
+
+.cart-item span {
+    flex: 1;
+    text-align: center;
+    font-family: var(--text-font);
+}
+
+.total {
+    text-align: right;
+    font-size: 1.5rem;
+    color: var(--quadra-color); /* Quadra for total amount text */
+    margin-top: 20px;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: var(--secondary-color); /* Secondary for button background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--main-font);
+}
+
+.checkout-button:hover {
+    background-color: var(--tertiary-color); /* Tertiary for hover state */
+}
+
+.navbar{
+    background-color: var(--quadra-color);
+}
+
+.navbar a{
+    color:var(--primary-color);
+}
+
+.navbar-brand{
+    color: var(--primary-color);
+}
+
+.item-search-btn{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.buy-btn{
+    background-color: var(--quadra-color);
+    color: var(--primary-color);
+    border-color: var(--quadra-color);
+}

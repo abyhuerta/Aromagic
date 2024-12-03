@@ -34,7 +34,6 @@ onAuthStateChanged(auth, (user) => {
 
 //   var totalPrice = (existingProduct?.price || products.find(product => product.id === productID).price) * oz * qty;
 
-
 //   // Update the cart with the new quantity
 //   await updateDoc(cartRef, {
 //     [`products.${productID}`]: {
@@ -152,9 +151,37 @@ export const getUserCart = async(userId) => {
 
   // Retrieve the cart data
   const cartDoc = await getDoc(cartRef);
-  console.log("Document data: ",cartDoc.data())
-
+  // console.log("Document data: ",cartDoc.data())
+  return(cartDoc.data());
 }
 
+export const getUserTotal = async(userId) => {
+  userId = getCurrentUserId();
+  if (!userId){
+    console.error("User is not logged in.");
+    return;
+  }
+  const totalRef = doc(db,'cart',userId);
+  const totalDoc = await getDoc(totalRef);
+  const total = totalDoc.data().total;
+  // console.log("Document total: ", total);
+  return total;
+}
 
+export const getUserItems = async(userId) => {
+  userId = getCurrentUserId();
+  if (!userId){
+    console.error("User is not logged in.");
+    return;
+  }
+  const productRef = doc(db,'cart',userId);
+  const productDoc = await getDoc(productRef);
+  // console.log("Document total: ", productDoc.data().products);
+  return(productDoc.data().products)
+}
+
+// getUserTotal()
 //example of usage fOR REMOVAL : removeItemFromCart('productID1', 18, 1);
+
+
+
